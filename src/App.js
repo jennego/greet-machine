@@ -8,17 +8,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <ul>
+            <li>Will try foundation</li>
+            <li> Write Name in field </li>
+            <li> Buttons to generate type of message? Menu </li>
+            <li> Text to speech (responsivevoicejs?) </li>
+            <li> Easy copy-paste</li>
+          </ul>
+          <p>Please note that greetings were procured from the web and I am not an expert greeter in any stretch of the imagination</p>
         </header>
       </div>
     );
