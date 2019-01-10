@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
             <li> Buttons to generate type of message? Menu </li>
             <li> Text to speech (responsivevoicejs?) </li>
             <li> Easy copy-paste</li>
+            <li>Thesaurus for mad-lib type things (click highliight and select)</li> 
           </ul>
           <p>Please note that greetings were procured from the web and I am not an expert greeter in any stretch of the imagination</p>
         </header>
