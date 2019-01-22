@@ -1,5 +1,13 @@
-I hate greetings so this is going to be my greeting machine!
+I hate greetings so this is going to be my greeting machine! 
 
+*It may or be socially acceptable. Use at your own risk. 
+
+- Will try foundation<
+- Write Name in field
+- Buttons to generate type of message? Menu 
+- Text to speech (responsivevoicejs?) </li>
+-  Easy copy-paste
+- Thesaurus for mad-lib type things (click highliight and select)
 ***************
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
