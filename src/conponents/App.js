@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import PhraseDisplay from './PhraseDisplay/PhraseDisplay';
-import NameInsert from './NameInsert/NameInsert';
+import NameInsert from './NameInsert/NameInsert.js';
 
 class App extends Component {
   render() {

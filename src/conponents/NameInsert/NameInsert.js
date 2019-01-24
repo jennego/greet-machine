@@ -1,5 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+// import Input from '@material-ui/core/Input'
+import Button from '@material-ui/core/Button'
+import {Input } from 'reactstrap';
 //import { Test } from './NameInsert.styles';
 
 class NameInsert extends PureComponent { 
@@ -7,9 +11,11 @@ class NameInsert extends PureComponent {
     super(props);
 
     this.state = {
-      hasError: false,
+      value: ' '
     };
   }
+
+
 
   componentWillMount = () => {
     console.log('NameInsert will mount');
@@ -39,9 +45,17 @@ class NameInsert extends PureComponent {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
+
+
     return (
+      
       <div className="NameInsertWrapper">
-        Insert Your Name Here
+        <Input type='text' label='Name' value={this.state.value}
+          onChange={e => {
+            this.setState({ value: e.target.value })
+          }}>
+        </Input>
+        <Button name="Hi"> </Button>
       </div>
     );
   }
