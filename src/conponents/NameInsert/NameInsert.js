@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-// import Input from '@material-ui/core/Input'
-import Button from '@material-ui/core/Button'
-import {Input } from 'reactstrap';
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel';
+
+
 import PhraseDisplay from './PhraseDisplay'
 //import { Test } from './NameInsert.styles';
 
@@ -53,12 +54,11 @@ class NameInsert extends PureComponent {
       <div className="NameInsertWrapper">
         <PhraseDisplay name={this.state.name}>
         </PhraseDisplay>
-        <Input type='text' label='Name' value={this.state.value}
+        <Input type='text' label='Name' variant="outlined" placeholder="Enter a Name" value={this.state.value}
           onChange={e => {
             this.setState({ name: e.target.value })
           }}>
         </Input>
-        <Button> </Button>
       </div>
     );
   }
