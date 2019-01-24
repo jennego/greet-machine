@@ -41,7 +41,7 @@ class PhraseDisplay extends PureComponent {
     }
     return (
       <div className="PhraseDisplayWrapper">
-        <h1> Hello, Your Name</h1>
+        <h1> Hello, {this.props.name} </h1>
       </div>
     );
   }

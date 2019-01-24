@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 // import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 import {Input } from 'reactstrap';
+import PhraseDisplay from './PhraseDisplay'
 //import { Test } from './NameInsert.styles';
 
 class NameInsert extends PureComponent { 
@@ -11,7 +12,7 @@ class NameInsert extends PureComponent {
     super(props);
 
     this.state = {
-      value: ' '
+      name: 'World '
     };
   }
 
@@ -50,12 +51,14 @@ class NameInsert extends PureComponent {
     return (
       
       <div className="NameInsertWrapper">
+        <PhraseDisplay name={this.state.name}>
+        </PhraseDisplay>
         <Input type='text' label='Name' value={this.state.value}
           onChange={e => {
-            this.setState({ value: e.target.value })
+            this.setState({ name: e.target.value })
           }}>
         </Input>
-        <Button name="Hi"> </Button>
+        <Button> </Button>
       </div>
     );
   }
