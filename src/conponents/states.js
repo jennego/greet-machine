@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import PhraseDisplay from './NameInsert/PhraseDisplay';
-import NameInsert from './NameInsert/NameInsert.js';
+import { NameInsert } from './NameInsert/NameInsert.js';
 import { PhraseSelect } from './phraseSelect.js'
 
 class States extends Component {
@@ -11,16 +11,23 @@ class States extends Component {
         super(props);
 
         this.state = {
-            phrase: 'hi',
-            name: ''
+            phrase: 'Hello',
+            name: 'World'
         };
 
         this.changePhrase = this.changePhrase.bind(this);
+        this.changeName = this.changeName.bind(this);
     }
 
     changePhrase(newPhrase) {
         this.setState({
             phrase: newPhrase
+        });
+    }
+
+    changeName(newName) {
+        this.setState({
+            name: newName
         });
     }
 
@@ -31,7 +38,7 @@ class States extends Component {
 
 
                 <PhraseDisplay phrase={this.state.phrase} name={this.state.name} ></PhraseDisplay>
-                <NameInsert></NameInsert> 
+                <NameInsert onChange={this.changeName}></NameInsert> 
                 <PhraseSelect phrase={this.state.phrase} onChange={this.changePhrase}></PhraseSelect>
             </div>
         );

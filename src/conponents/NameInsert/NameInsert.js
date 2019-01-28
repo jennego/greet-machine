@@ -1,22 +1,16 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel';
-
-
 import PhraseDisplay from './PhraseDisplay'
 //import { Test } from './NameInsert.styles';
 
-class NameInsert extends PureComponent { 
+
+export class NameInsert extends Component { 
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: 'World '
-    };
   }
-
 
 
   componentWillMount = () => {
@@ -43,19 +37,19 @@ class NameInsert extends PureComponent {
     console.log('NameInsert will unmount');
   }
 
-  render () {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
-    }
+  handleChange = (event) => {
+    console.log(event.target.value)
+    const name = event.target.value;
+    this.props.onChange(name)
+  }
 
+  render () {
 
     return (
       
       <div className="NameInsertWrapper">
-        <Input type='text' placeholder="Enter a Name" value={this.state.value}
-          onChange={e => {
-            this.props({ name: e.target.value })
-          }}>
+        <Input type='text' placeholder="Enter a Name" value={this.props.name}
+          onChange={this.handleChange}>
         </Input>
       </div>
     );
@@ -70,4 +64,4 @@ NameInsert.defaultProps = {
   // bla: 'test',
 };
 
-export default NameInsert;
+

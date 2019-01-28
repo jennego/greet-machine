@@ -44,8 +44,10 @@ export class PhraseSelect extends Component {
                         onChange={this.handleChange}
                     >
                         <MenuItem value='Hello'>Hello</MenuItem>
-                        <MenuItem value='Good morning'>Good Morning</MenuItem>
-                        <MenuItem value="oh god">How are you?</MenuItem>
+                        <MenuItem value='Good Morning'>Good Morning</MenuItem>
+                        <MenuItem value="How Are You">How are you?</MenuItem>
+                        <MenuItem value="Oh God">Oh God</MenuItem>
+
                     </Select>
                 </FormControl>
                 </form>
