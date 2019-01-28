@@ -48,7 +48,7 @@ export class NameInsert extends Component {
     return (
       
       <div className="NameInsertWrapper">
-        <Input type='text' placeholder="Enter a Name" value={this.props.name}
+        <Input type='text' className="name-input" placeholder="Enter a Name" value={this.props.name}
           onChange={this.handleChange}>
         </Input>
       </div>

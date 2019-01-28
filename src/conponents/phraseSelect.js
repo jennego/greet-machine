@@ -37,9 +37,10 @@ export class PhraseSelect extends Component {
             <form className='phrase-dropdown' autoComplete="off">
             {this.props.value}
                 <FormControl>
-                    <InputLabel htmlFor="phrase-simple">Change Phrase</InputLabel>
+                    <InputLabel htmlFor="phrase-simple" >Change Phrase</InputLabel>
                     
                     <Select
+                        className="phrase"
                         value={this.props.phrase}
                         onChange={this.handleChange}
                     >

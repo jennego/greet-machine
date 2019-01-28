@@ -35,11 +35,12 @@ class States extends Component {
         return (
             <div className="App">
                 <h2> Greeting Machine </h2>
+                <p> Now you can sound like a socially awkward robot!</p>
 
 
                 <PhraseDisplay phrase={this.state.phrase} name={this.state.name} ></PhraseDisplay>
-                <NameInsert onChange={this.changeName}></NameInsert> 
                 <PhraseSelect phrase={this.state.phrase} onChange={this.changePhrase}></PhraseSelect>
+                <NameInsert onChange={this.changeName}></NameInsert> 
             </div>
         );
     }
