@@ -52,11 +52,9 @@ class NameInsert extends PureComponent {
     return (
       
       <div className="NameInsertWrapper">
-        <PhraseDisplay name={this.state.name}>
-        </PhraseDisplay>
-        <Input type='text' label='Name' variant="outlined" placeholder="Enter a Name" value={this.state.value}
+        <Input type='text' placeholder="Enter a Name" value={this.state.value}
           onChange={e => {
-            this.setState({ name: e.target.value })
+            this.props({ name: e.target.value })
           }}>
         </Input>
       </div>
