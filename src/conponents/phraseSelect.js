@@ -5,14 +5,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import PhraseGenerate from './PhraseGenerate/PhraseGenerate'
 
 
 export class PhraseSelect extends Component {
 
-
-    constructor(props) {
-        super(props);
-    }
 
     componentWillReceiveProps = (nextProps) => {
         console.log('PhraseSelect will receive props', nextProps);
@@ -48,6 +45,7 @@ export class PhraseSelect extends Component {
                         <MenuItem value='Good Morning'>Good Morning</MenuItem>
                         <MenuItem value="How Are You">How are you?</MenuItem>
                         <MenuItem value="Oh God">Oh God</MenuItem>
+                        <MenuItem value="Greetings">Greeting</MenuItem>
 
                     </Select>
                 </FormControl>
