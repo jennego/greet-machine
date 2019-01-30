@@ -32,7 +32,7 @@ export class PhraseSelect extends Component {
     render() {
         return (
             <form className='phrase-dropdown' autoComplete="off">
-            {this.props.value}
+            <PhraseGenerate></PhraseGenerate>
                 <FormControl>
                     <InputLabel htmlFor="phrase-simple" >Change Phrase</InputLabel>
                     
@@ -41,6 +41,7 @@ export class PhraseSelect extends Component {
                         value={this.props.phrase}
                         onChange={this.handleChange}
                     >
+                    <PhraseGenerate></PhraseGenerate>
                         <MenuItem value='Hello'>Hello</MenuItem>
                         <MenuItem value='Good Morning'>Good Morning</MenuItem>
                         <MenuItem value="How Are You">How are you?</MenuItem>
