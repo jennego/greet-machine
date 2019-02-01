@@ -4,10 +4,13 @@ Nice greetings or otherwise...
 *It may or be socially acceptable. Use at your own risk. 
 
 - Write Name in field
-- Buttons to generate type of message? Menu 
+- Buttons to generate type of message? Drop down Menu. 
+
+To do
+- Get generated messages to work on select 
 - Text to speech (responsivevoicejs?) 
--  Easy copy-paste
-- Thesaurus for mad-lib type things (click highliight and select)
+- Easy copy-paste
+- Thesaurus for mad-lib type things (click highliight and select from drop down)
 - Nice or less nice toggle  
 - Random quote feature with name 
 ***************

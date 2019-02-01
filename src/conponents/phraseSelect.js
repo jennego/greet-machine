@@ -6,10 +6,42 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import PhraseGenerate from './PhraseGenerate/PhraseGenerate'
+import Button from '@material-ui/core/Button'
 
+let allPhrases = []
+let timeOfDay = ['Morning', 'Night', 'Evening']
+let hellos = ['Hi', 'Hello']
+let niceWord = ['Good', 'Lovely', 'Amazing']
+let greetings = ['Greetings,', 'Salutations,']
+let you = ['How Are You,', 'Wuzzup', 'How Do You Do,']
+let dread = ['Oh God', "Uh oh", 'Oh No']
+
+function random(items) {
+    return items[Math.floor(Math.random() * items.length)];
+}
 
 export class PhraseSelect extends Component {
+    
+    constructor(props) {
+        super(props)
 
+        this.state = {
+            phrases: []
+        }
+    }
+
+    generate = () => {
+        console.log('phrases generated')
+        this.state.phrases.push(random(hellos)) 
+        this.state.phrases.push(random(you))
+        this.state.phrases.push(random(greetings))
+        this.state.phrases.push(random(niceWord) + ' ' + random(timeOfDay))
+    }
+
+    componentWillMount = () => {
+        console.log('phrase select will mount')
+        this.setState = this.generate()
+    }
 
     componentWillReceiveProps = (nextProps) => {
         console.log('PhraseSelect will receive props', nextProps);
@@ -32,7 +64,7 @@ export class PhraseSelect extends Component {
     render() {
         return (
             <form className='phrase-dropdown' autoComplete="off">
-            <PhraseGenerate></PhraseGenerate>
+    
                 <FormControl>
                     <InputLabel htmlFor="phrase-simple" >Change Phrase</InputLabel>
                     
@@ -41,12 +73,13 @@ export class PhraseSelect extends Component {
                         value={this.props.phrase}
                         onChange={this.handleChange}
                     >
-                    <PhraseGenerate></PhraseGenerate>
-                        <MenuItem value='Hello'>Hello</MenuItem>
-                        <MenuItem value='Good Morning'>Good Morning</MenuItem>
-                        <MenuItem value="How Are You">How are you?</MenuItem>
-                        <MenuItem value="Oh God">Oh God</MenuItem>
-                        <MenuItem value="Greetings">Greeting</MenuItem>
+
+                        {this.state.phrases.map((phrase, k) =>
+                            <MenuItem key={k} value={phrase}> {phrase}</MenuItem>
+                        )}
+                
+                        
+
 
                     </Select>
                 </FormControl>

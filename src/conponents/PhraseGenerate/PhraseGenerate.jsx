@@ -68,11 +68,7 @@ class PhraseGenerate extends Component {
 
         <MenuItem value="from child">from child</MenuItem>
         <MenuItem value="Greetings">Greeting</MenuItem>
-    {/* {this.generate()}
-    
-      {this.state.phrases.map((phrase, k) =>
-          <MenuItem key={k} value={phrase}> {phrase}</MenuItem>
-        )} */}
+
     </div>
     )
   }

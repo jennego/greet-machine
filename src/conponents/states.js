@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
-import PhraseDisplay from './NameInsert/PhraseDisplay';
+import PhraseDisplay from './PhraseDisplay/PhraseDisplay';
 import { NameInsert } from './NameInsert/NameInsert.js';
 import { PhraseSelect } from './phraseSelect.js'
 
@@ -39,7 +38,7 @@ class States extends Component {
 
 
                 <PhraseDisplay phrase={this.state.phrase} name={this.state.name} ></PhraseDisplay>
-                <PhraseSelect phrase={this.state.phrase} onChange={this.changePhrase}></PhraseSelect>
+                <PhraseSelect phrase={this.state.phrase} name={this.state.name} onChange={this.changePhrase}></PhraseSelect>
                 <NameInsert onChange={this.changeName}></NameInsert> 
             </div>
         );
