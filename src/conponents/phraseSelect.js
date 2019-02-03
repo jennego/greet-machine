@@ -9,7 +9,7 @@ import PhraseGenerate from './PhraseGenerate/PhraseGenerate'
 import Button from '@material-ui/core/Button'
 
 let allPhrases = []
-let timeOfDay = ['Morning', 'Night', 'Evening']
+let timeOfDay = ['Morning,', 'Night,', 'Evening,']
 let hellos = ['Hi', 'Hello']
 let niceWord = ['Good', 'Lovely', 'Amazing']
 let greetings = ['Greetings,', 'Salutations,']
@@ -28,7 +28,9 @@ export class PhraseSelect extends Component {
         this.state = {
             phrases: []
         }
+        this.buttonClick = this.buttonClick.bind(this)
     }
+
 
     generate = () => {
         console.log('phrases generated')
@@ -61,6 +63,12 @@ export class PhraseSelect extends Component {
         this.props.onChange(phrase)
     }
 
+    buttonClick = (event) =>  {
+        this.state.phrases = []
+        this.generate()
+        this.forceUpdate()     
+    }
+
     render() {
         return (
             <form className='phrase-dropdown' autoComplete="off">
@@ -82,6 +90,7 @@ export class PhraseSelect extends Component {
 
 
                     </Select>
+                    <Button onClick={this.buttonClick}> Refresh Phrase List </Button>
                 </FormControl>
                 </form>
         );
