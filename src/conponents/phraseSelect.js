@@ -90,7 +90,7 @@ export class PhraseSelect extends Component {
 
 
                     </Select>
-                    <Button onClick={this.buttonClick}> Refresh Phrase List </Button>
+                    <Button variant="outlined" color="primary" onClick={this.buttonClick}> Refresh Phrase List </Button>
                 </FormControl>
                 </form>
         );
