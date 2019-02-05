@@ -5,8 +5,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import PhraseGenerate from './PhraseGenerate/PhraseGenerate'
 import Button from '@material-ui/core/Button'
+
 
 let allPhrases = []
 let timeOfDay = ['Morning,', 'Night,', 'Evening,']
@@ -28,43 +28,38 @@ export class PhraseSelect extends Component {
         this.state = {
             phrases: []
         }
-        this.buttonClick = this.buttonClick.bind(this)
     }
 
-
+    
     generate = () => {
-        console.log('phrases generated')
-        this.state.phrases.push(random(hellos)) 
-        this.state.phrases.push(random(you))
-        this.state.phrases.push(random(greetings))
-        this.state.phrases.push(random(niceWord) + ' ' + random(timeOfDay))
+        this.setState({ phrases: [random(hellos), random(you), random(greetings), random(niceWord) + ' ' + random(timeOfDay)  ] })
     }
 
     componentWillMount = () => {
         console.log('phrase select will mount')
-        this.setState = this.generate()
+        this.generate()
     }
-
+    
     componentWillReceiveProps = (nextProps) => {
         console.log('PhraseSelect will receive props', nextProps);
     }
-
+    
     componentWillUpdate = (nextProps, nextState) => {
         console.log('PhraseSelect will update', nextProps, nextState);
     }
-
+    
     componentDidUpdate = () => {
         console.log('PhraseSelect did update');
     }
-
+    
     handleChange = (event) => {
         console.log(event.target.value)
         const phrase = event.target.value;
         this.props.onChange(phrase)
     }
-
-    buttonClick = (event) =>  {
-        this.state.phrases = []
+    
+    handleClick = (event) =>  {
+   
         this.generate()
         this.forceUpdate()     
     }
@@ -90,7 +85,7 @@ export class PhraseSelect extends Component {
 
 
                     </Select>
-                    <Button variant="outlined" color="primary" onClick={this.buttonClick}> Refresh Phrase List </Button>
+                    <Button variant="outlined" color="primary" onClick={this.handleClick}> Refresh Phrase List </Button>
                 </FormControl>
                 </form>
         );
