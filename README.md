@@ -7,13 +7,18 @@ Nice greetings or otherwise...
 - Buttons to generate type of message? Drop down Menu. 
 
 To do
-- Get generated messages to work on select 
+- Get generated messages to work on select // complete
 - Text to speech (responsivevoicejs?) 
 - Easy copy-paste
-- Thesaurus for mad-lib type things (click highliight and select from drop down)
+- Thesaurus for mad-lib type things (click highlight and select from drop down) // working on
 - Nice or less nice toggle  
 - Random quote feature with name 
+
 ***************
+Replacing a word
+change findword state
+search replace phrase state (may need to convert to array or obj) with findword state
+if not exist display error
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
