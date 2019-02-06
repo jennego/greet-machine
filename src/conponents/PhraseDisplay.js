@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 //import { Test } from './PhraseDisplay.styles';
+import { Words } from '../requests.js'
 
 class PhraseDisplay extends PureComponent { 
   constructor(props) {
@@ -8,9 +9,19 @@ class PhraseDisplay extends PureComponent {
 
     this.state = {
       hasError: false,
+      findWord: ' '
     };
   }
 
+  handleClickWord = (event) => {
+    let word = event.target.innerText
+    console.log(word)
+    this.setState({findWord: word})
+    Words
+      .getWord(word.trim())
+      .then(data => { this.setState({ word_def: data}); })
+  }
+  
   componentWillMount = () => {
     console.log('PhraseDisplay will mount');
   }
@@ -41,7 +52,11 @@ class PhraseDisplay extends PureComponent {
     }
     return (
       <div className="PhraseDisplayWrapper">
-        <h1> {this.props.phrase} {this.props.name} </h1>
+        <h1> {this.props.phrase.split(" ").map((word, k) =>
+          <span className="wordClick" onClick={this.handleClickWord}> {word} </span>
+        )}
+        
+      {this.props.name} </h1> 
       </div>
     );
   }

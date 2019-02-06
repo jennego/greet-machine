@@ -9,11 +9,11 @@ import Button from '@material-ui/core/Button'
 
 
 let allPhrases = []
-let timeOfDay = ['Morning,', 'Night,', 'Evening,']
+let timeOfDay = ['Morning', 'Night', 'Evening']
 let hellos = ['Hi', 'Hello']
 let niceWord = ['Good', 'Lovely', 'Amazing']
-let greetings = ['Greetings,', 'Salutations,']
-let you = ['How Are You,', 'Wuzzup', 'How Do You Do,']
+let greetings = ['Greetings', 'Salutations']
+let you = ['How Are You', 'Wuzzup', 'How Do You Do']
 let dread = ['Oh God', "Uh oh", 'Oh No']
 
 function random(items) {
@@ -59,7 +59,6 @@ export class PhraseSelect extends Component {
     }
     
     handleClick = (event) =>  {
-   
         this.generate()
         this.forceUpdate()     
     }

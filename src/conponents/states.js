@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import PhraseDisplay from './PhraseDisplay/PhraseDisplay';
+import PhraseDisplay from './PhraseDisplay';
 import { NameInsert } from './NameInsert/NameInsert.js';
 import { PhraseSelect } from './phraseSelect.js'
 

@@ -13,3 +13,7 @@
 .name-input {
   width: 200px;
 }
+.wordClick {
+  cursor: pointer;
+  background: lightskyblue;
+}
