@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 //import { Test } from './PhraseDisplay.styles';
 import { Words } from '../requests.js'
 

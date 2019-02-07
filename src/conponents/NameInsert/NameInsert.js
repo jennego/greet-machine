@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input'
-import InputLabel from '@material-ui/core/InputLabel';
 //import { Test } from './NameInsert.styles';
 
 
 export class NameInsert extends Component { 
-  constructor(props) {
-    super(props);
-  }
 
 
   componentWillMount = () => {
