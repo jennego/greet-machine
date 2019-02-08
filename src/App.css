@@ -15,5 +15,8 @@
 }
 .wordClick {
   cursor: pointer;
+  background:#e0f9ff;
+}
+.wordClick:hover {
   background: lightskyblue;
 }
