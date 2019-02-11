@@ -22,6 +22,8 @@ class PhraseDisplay extends PureComponent {
     .getWord(word.trim())
     .then(data => { this.setState({ word_def: data}); })
   }
+
+
   
   componentWillMount = () => {
     console.log('PhraseDisplay will mount');
@@ -53,7 +55,7 @@ class PhraseDisplay extends PureComponent {
     }
     
     const wordList = this.state.word_def
-    
+
     return (
       <div className="PhraseDisplayWrapper">
         {/* {wordList ? 
@@ -67,10 +69,11 @@ class PhraseDisplay extends PureComponent {
             })
           })
           : 'Nothing here'}  */}
-          {Object.keys(wordList).map((word) =>
-            <span> {word} </span>
-          )}
-          
+        
+          ))}
+
+
+
         <h1 className="main-phrase"> {this.props.phrase.split(" ").map((word, k) =>
           <span className="wordClick" onClick={this.handleClickWord}> {word} </span>
           )}
