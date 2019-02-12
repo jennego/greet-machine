@@ -2,7 +2,8 @@ I hate greetings so this is going to be my greeting machine!
 Nice greetings or otherwise... 
 
 *It may or be socially acceptable. Use at your own risk. 
- 
+
+I am currently trying to go through the stupid API nested object...it's not working so well for me... 
 
 To do
 - Get generated messages to work on select // complete
