@@ -12,6 +12,7 @@ class PhraseDisplay extends PureComponent {
       word_def: 'hi'
     };
 
+    const wordList = this.state.word_def
   }
   
   handleClickWord = (event) => {
@@ -48,6 +49,23 @@ class PhraseDisplay extends PureComponent {
   componentWillUnmount = () => {
     console.log('PhraseDisplay will unmount');
   }
+
+  showordList = () => {
+    const wordList = this.state.word_def
+    
+    if (wordList !== undefined) {
+  
+      for (let type in wordList) {
+        for (let words in wordList[type]) {
+          wordList[type][words].toString() 
+        }
+      }
+  
+    } else {
+      
+      return 'Nothing?'
+    }
+  }
   
   render () {
     if (this.state.hasError) {
@@ -58,19 +76,9 @@ class PhraseDisplay extends PureComponent {
 
     return (
       <div className="PhraseDisplayWrapper">
-        {/* {wordList ? 
-          Object.keys(wordList).map(type => {
-            console.log('Type: ' + type)
-            Object.keys(wordList[type]).map(syn => {
-              console.log('Word list: ' + syn)
-              wordList[type][syn].map(words => {
-                console.log(words)
-              })
-            })
-          })
-          : 'Nothing here'}  */}
+      <div>
         
-          ))}
+      </div>
 
 
 
