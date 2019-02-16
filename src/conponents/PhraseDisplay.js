@@ -9,7 +9,7 @@ class PhraseDisplay extends PureComponent {
     this.state = {
       hasError: false,
       findWord: ' ',
-      word_def: 'hi'
+      word_def: ' '
     };
 
     const wordList = this.state.word_def
@@ -51,16 +51,13 @@ class PhraseDisplay extends PureComponent {
   }
 
   showordList = () => {
-    const wordList = this.state.word_def
+    const wordList = this.state.word_def.response
+    const {synonyms, list } = wordList
     
-    if (wordList !== undefined) {
+    if (wordList.response !== '') {
   
-      for (let type in wordList) {
-        for (let words in wordList[type]) {
-          wordList[type][words].toString() 
-        }
-      }
-  
+     return  wordList.map((word) => word.list.synonyms.split('|').map((s => <li> s </li>))) 
+      
     } else {
       
       return 'Nothing?'
@@ -72,12 +69,12 @@ class PhraseDisplay extends PureComponent {
       return <h1>Something went wrong.</h1>;
     }
     
-    const wordList = this.state.word_def
 
     return (
       <div className="PhraseDisplayWrapper">
       <div>
-        
+          {this.showordList}
+          {this.state.word_def.response ? this.state.word_def.response.map((word) => word.list.synonyms.split('|').map((s) => <li> {s} </li>)) : <p> nothing </p>}
       </div>
 
 
