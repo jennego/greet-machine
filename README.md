@@ -11,12 +11,13 @@ To do
 - Easy copy-paste
 - Thesaurus for mad-lib type things (click highlight and select from drop down) // working on
 
-Lesser things
+Lesser things - to be added later 
 - Nice or less nice toggle ?? 
 - Random quote feature with name ??
 
 ***************
 Notes to self
+Split at ( first and then trim 
 Replacing a word
 change findword state
 search replace phrase state (may need to convert to array or obj) with findword state
