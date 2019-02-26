@@ -5,23 +5,25 @@ Nice greetings or otherwise...
 
 I am currently trying to go through the stupid API nested object...it's not working so well for me... 
 
+
+
 To do
 - Get generated messages to work on select // complete
 - Text to speech (responsivevoicejs?) 
-- Easy copy-paste
+- Easy copy-paste - should work on ASAP 
 - Thesaurus for mad-lib type things (click highlight and select from drop down) // working on
+    - Add list to select 
+    - Make event.pointer selected word 
+    - Split at ( first and then trim 
+    - change findword state
+    - search replace phrase state (may need to convert to array or) with findword state
+    - if not exist display error
+    - if exist change word === findword  (note: look at hangman project when I did that) - will have to use regular JS and somehow make it display on the JSX) 
+
 
 Lesser things - to be added later 
 - Nice or less nice toggle ?? 
-- Random quote feature with name ??
-
-***************
-Notes to self
-Split at ( first and then trim 
-Replacing a word
-change findword state
-search replace phrase state (may need to convert to array or obj) with findword state
-if not exist display error
+- Random quote feature with name 
 
 ***********
 
