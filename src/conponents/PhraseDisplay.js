@@ -79,7 +79,7 @@ class PhraseDisplay extends PureComponent {
 
 
 
-        <h1 className="main-phrase"> {this.props.phrase.split(" ").map((word, k) =>
+        <h1 className="main-phrase-words"> {this.props.phrase.split(" ").map((word, k) =>
           <span className="wordClick" onClick={this.handleClickWord}> {word} </span>
           )}
 

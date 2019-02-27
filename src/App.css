@@ -8,9 +8,17 @@
   width: 300px;
 }
 
-h1.main-phrase {
+.copy-btn {
+  float: right;
+}
+
+.main-phrase-words {
   font-family: 'Patrick Hand', cursive;
   font-size: 45px;
+}
+.main-phrase {
+  margin-bottom: 30px;
+  border: #000 1px solid;
 }
 
 .NameInsertWrapper {
