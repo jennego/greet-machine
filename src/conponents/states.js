@@ -6,7 +6,6 @@ import { PhraseSelect } from './phraseSelect.js'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
 class States extends Component {
 
@@ -15,7 +14,8 @@ class States extends Component {
 
         this.state = {
             phrase: 'Hello',
-            name: 'World'
+            name: 'World',
+            copied: false
         };
         this.changePhrase = this.changePhrase.bind(this);
         this.changeName = this.changeName.bind(this);
@@ -23,29 +23,37 @@ class States extends Component {
     
     changePhrase(newPhrase) {
         this.setState({
-            phrase: newPhrase
+            phrase: newPhrase,
+            copied: false
         });
     }
     
     changeName(newName) {
         this.setState({
-            name: newName
+            name: newName,
+            copied: false
         });
     }
+
+    onCopy = () => {
+        this.setState({ copied: true });
+    }
+
+
     
     render() {
         let fullPhrase = this.state.phrase + " " + this.state.name 
+        let copy = this.state.copied
         return (
             <div className="App">
                 <h2> Greeting Machine </h2>
                 <p> Now you can sound like a socially awkward robot!</p>
-
-                {fullPhrase}
+        
                 <Grid container justify='center' spacing={24}>
                     <Grid xs={6} className='main-phrase'>
-                        <PhraseDisplay phrase={this.state.phrase} name={this.state.name} ></PhraseDisplay>
-                        <CopyToClipboard  text={fullPhrase}>
-                            <Button variant="contained" className="copy-btn">Copy Phrase</Button>
+                        <PhraseDisplay phrase={this.state.phrase} name={this.state.name}></PhraseDisplay>
+                        <CopyToClipboard onCopy={this.onCopy} text={fullPhrase}>
+                            {copy ? <Button variant="contained" className="copy-btn copy-true">Copied!</Button> : <Button variant="contained" className="copy-btn">Copy Phrase</Button>}
                         </CopyToClipboard>
                     </Grid>
                 </Grid>

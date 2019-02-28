@@ -13,6 +13,17 @@ const DICT_URL = 'http://thesaurus.altervista.org/thesaurus/v1?key=Hv65GF5PDcFHD
 
 
 export const Words = {
+// getWord(word) {
+//         return fetch(`${DICT_URL}${word}`).then(res => {
+//         if (res.ok) {
+//             return res;
+//         } else {
+//             throw Error(`Request rejected with status ${res.status}`);
+//         }
+//         }).catch()
+// }
+
+
 
     getWord(word) {
         return fetch(
@@ -23,9 +34,7 @@ export const Words = {
             } else {
                 return { error: 'Something went wrong!' };
             }
-        });
+        })
     }
+
 }
-
-
-

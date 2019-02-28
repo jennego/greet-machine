@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 //import { Test } from './PhraseDisplay.styles';
 import { Words } from '../requests.js'
+import Popover from '@material-ui/core/Popover';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 class PhraseDisplay extends PureComponent { 
   constructor(props) {
@@ -14,17 +17,26 @@ class PhraseDisplay extends PureComponent {
 
     const wordList = this.state.word_def
   }
+
+  //    console.log(event.target.innerText); will pull values out from material uis menus 
+  // Menu needs to be in own compondent probably 
   
   handleClickWord = (event) => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    setAnchorEl(event.currentTarget);
     let word = event.target.innerText
     console.log(word)
     this.setState({findWord: word})
     Words
     .getWord(word.trim())
     .then(data => { this.setState({ word_def: data}); })
+    .catch(error => {this.setState({ word_def: error.toString() });})
   }
 
-
+  handleClose = () => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    setAnchorEl(null);
+  }
   
   componentWillMount = () => {
     console.log('PhraseDisplay will mount');
@@ -52,16 +64,6 @@ class PhraseDisplay extends PureComponent {
 
   showordList = () => {
     const wordList = this.state.word_def.response
-    const {synonyms, list } = wordList
-    
-    if (wordList.response !== '') {
-  
-     return  wordList.map((word) => word.list.synonyms.split('|').map((s => <li> s </li>))) 
-      
-    } else {
-      
-      return 'Nothing?'
-    }
   }
   
   render () {
@@ -73,9 +75,9 @@ class PhraseDisplay extends PureComponent {
     return (
       <div className="PhraseDisplayWrapper">
       <div>
-          {this.showordList}
           {this.state.word_def.response ? this.state.word_def.response.map((word) => word.list.synonyms.split('|').map((s) => <li> {s} </li>)) : <p> nothing </p>}
       </div>
+
 
 
 
