@@ -4,6 +4,7 @@ import { Words } from '../requests.js'
 import Popover from '@material-ui/core/Popover';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import WordMenu from './WordMenu.jsx'
 
 class PhraseDisplay extends PureComponent { 
   constructor(props) {
@@ -16,6 +17,7 @@ class PhraseDisplay extends PureComponent {
     };
 
     const wordList = this.state.word_def
+    const [anchorEl, setAnchorEl] = React.useState(null);
   }
 
   //    console.log(event.target.innerText); will pull values out from material uis menus 
@@ -77,6 +79,8 @@ class PhraseDisplay extends PureComponent {
       <div>
           {this.state.word_def.response ? this.state.word_def.response.map((word) => word.list.synonyms.split('|').map((s) => <li> {s} </li>)) : <p> nothing </p>}
       </div>
+
+      
 
 
 

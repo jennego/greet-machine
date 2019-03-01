@@ -1,25 +1,48 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-//import { Test } from './WordMenu.styles';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
-const WordMenu = (props) => (
-  <div className="WordMenuWrapper">
+class SimpleMenu extends React.Component {
+  state = {
+    anchorEl: null,
+  };
 
-    <Menu id="simple-menu" anchorEl={this.anchorEl} open={Boolean(this.anchorEl)} onClose={this.handleClose}>
-      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-      <MenuItem onClick={this.handleClose}>My account</MenuItem>
-      <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-    </Menu>
+  handleClick = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
 
-  </div>
-);
+  handleClose = (event) => {
+    this.setState({ anchorEl: null });
+    let selected = event.target.innerText
+    console.log(selected)
+  };
 
-WordMenu.propTypes = {
-  // bla: PropTypes.string,
-};
+  render() {
+    const { anchorEl } = this.state;
 
-WordMenu.defaultProps = {
-  // bla: 'test',
-};
+    return (
+      <div>
+        <a
+          aria-owns={anchorEl ? 'simple-menu' : undefined}
+          aria-haspopup="true"
+          onClick={this.handleClick}
+        >
+          Open Menu
+        </a>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={this.handleClose}
+        >
+          <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+          <MenuItem onClick={this.handleClose}>My account</MenuItem>
+          <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+        </Menu>
+      </div>
+    );
+  }
+}
 
-export default WordMenu;
+export default SimpleMenu;
