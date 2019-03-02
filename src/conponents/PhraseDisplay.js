@@ -17,7 +17,6 @@ class PhraseDisplay extends PureComponent {
     };
 
     const wordList = this.state.word_def
-    const [anchorEl, setAnchorEl] = React.useState(null);
   }
 
   //    console.log(event.target.innerText); will pull values out from material uis menus 
