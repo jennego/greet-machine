@@ -23,8 +23,6 @@ class PhraseDisplay extends PureComponent {
   // Menu needs to be in own compondent probably 
   
   handleClickWord = (event) => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    setAnchorEl(event.currentTarget);
     let word = event.target.innerText
     console.log(word)
     this.setState({findWord: word})
@@ -35,8 +33,6 @@ class PhraseDisplay extends PureComponent {
   }
 
   handleClose = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    setAnchorEl(null);
   }
   
   componentWillMount = () => {
@@ -78,9 +74,6 @@ class PhraseDisplay extends PureComponent {
       <div>
           {this.state.word_def.response ? this.state.word_def.response.map((word) => word.list.synonyms.split('|').map((s) => <li> {s} </li>)) : <p> nothing </p>}
       </div>
-
-      
-
 
 
 
